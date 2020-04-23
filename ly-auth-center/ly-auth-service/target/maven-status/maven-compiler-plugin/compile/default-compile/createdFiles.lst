@@ -1,0 +1,6 @@
+com\leyou\auth\client\UserClient.class
+com\leyou\auth\web\AuthController.class
+com\leyou\auth\service\AuthService.class
+META-INF\spring-configuration-metadata.json
+com\leyou\auth\config\JwtProperties.class
+com\leyou\LyAuthApplication.class
