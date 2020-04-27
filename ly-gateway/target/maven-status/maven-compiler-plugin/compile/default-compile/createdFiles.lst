@@ -1,6 +1,0 @@
-com\leyou\gateway\LyGateway.class
-com\leyou\gateway\filters\AuthFilter.class
-com\leyou\gateway\config\GlobalCorsConfig.class
-com\leyou\gateway\config\JwtProperties.class
-com\leyou\gateway\config\FilterProperties.class
-META-INF\spring-configuration-metadata.json
