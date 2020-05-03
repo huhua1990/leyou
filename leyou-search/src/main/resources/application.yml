@@ -9,6 +9,8 @@ logging:
 spring:
   application:
     name: search-service
+  main:
+    allow-bean-definition-overriding: true
   data:
     elasticsearch:
       cluster-name: ES-cluster
@@ -20,11 +22,22 @@ spring:
     username: admin
     password: admin
     virtual-host: /
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:10086/eureka
-    registry-fetch-interval-seconds: 5
-  instance:
-    prefer-ip-address: true
-    ip-address: 127.0.0.1
+  resources:
+    add-mappings: true
+    chain:
+      enabled: true
+      compressed: true
+      html-application-cache: true
+    cache:
+      period: 3600m
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10086/eureka
+#    registry-fetch-interval-seconds: 5
+#  instance:
+#    instance-id: ${spring.application.name}:${server.port}
+#    prefer-ip-address: true  #当你获取host时，返回的不是主机名，而是ip
+#    ip-address: 127.0.0.1
+#    lease-expiration-duration-in-seconds: 10 #10秒不发送九过期
+#    lease-renewal-interval-in-seconds: 5 #每隔5秒发一次心跳

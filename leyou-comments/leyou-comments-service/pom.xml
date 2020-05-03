@@ -2,65 +2,64 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <!--<parent>-->
-        <!--<artifactId>leyou-comments</artifactId>-->
-        <!--<groupId>com.leyou.parent</groupId>-->
-        <!--<version>1.0.0-SNAPSHOT</version>-->
-    <!--</parent>-->
     <parent>
+        <artifactId>leyou-comments</artifactId>
+        <groupId>com.leyou.comments</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <!--<parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.4.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
+        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;
+    </parent>-->
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.leyou.comments</groupId>
     <artifactId>leyou-comments-service</artifactId>
 
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.0.4.RELEASE</version>
+            <!--<version>2.0.4.RELEASE</version>-->
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
-            <version>2.1.0.RELEASE</version>
+            <!--<version>2.1.0.RELEASE</version>-->
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-            <version>2.0.2.RELEASE</version>
+            <!--<version>2.0.2.RELEASE</version>-->
         </dependency>
         <!--配置管理依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
-            <version>2.0.2.RELEASE</version>
+            <!--<version>2.0.2.RELEASE</version>-->
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-bus</artifactId>
-            <version>2.0.0.RELEASE</version>
+            <!--<version>2.0.0.RELEASE</version>-->
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
-            <version>2.0.0.RELEASE</version>
+            <!--<version>2.0.0.RELEASE</version>-->
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-            <version>2.0.0.RELEASE</version>
+            <!--<version>2.0.0.RELEASE</version>-->
         </dependency>
         <dependency>
             <groupId>com.leyou.authentication</groupId>
@@ -102,7 +101,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>2.0.2.RELEASE</version>
+            <!--<version>2.0.2.RELEASE</version>-->
         </dependency>
     </dependencies>
 

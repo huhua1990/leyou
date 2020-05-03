@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.leyou.parent</groupId>
+    <groupId>com.leyou.comments</groupId>
     <artifactId>leyou-comments</artifactId>
     <packaging>pom</packaging>
     <modules>

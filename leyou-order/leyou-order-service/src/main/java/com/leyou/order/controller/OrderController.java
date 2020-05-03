@@ -24,7 +24,7 @@ import java.util.List;
  * @Feature: 订单Controller
  */
 @RestController
-@RequestMapping("order")
+//@RequestMapping("order")
 @Api("订单服务接口")
 public class OrderController {
 

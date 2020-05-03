@@ -7,7 +7,6 @@ spring:
       url: jdbc:mysql://10.45.50.241:3306/leyou
       username: leyou
       password: leyou
-      driver-class-name: com.mysql.jdbc.Driver
   jackson:
     default-property-inclusion: non_null
 logging:
@@ -22,10 +21,14 @@ eureka:
       defaultZone: http://127.0.0.1:10086/eureka
     registry-fetch-interval-seconds: 5
   instance:
-    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true  #当你获取host时，返回的不是主机名，而是ip
     ip-address: 127.0.0.1
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
 mybatis:
   type-aliases-package: com.leyou.order.pojo
+  mapper-locations: mapper/OrderMapper.xml
 leyou:
   jwt:
     #pubKeyPath: H:/javacode/idea/rsa/rsa.pub # 公钥地址
@@ -43,3 +46,17 @@ leyou:
     notifyUrl: http://tzatwh.natappfree.cc/notify/pay
     connectTimeoutMs: 5000
     readTimeoutMs: 10000
+
+ribbon:
+  ConnectTimeout: 4000 # 连接超时时间(ms)
+  ReadTimeout: 2000 # 通信超时时间(ms)
+  OkToRetryOnAllOperations: true # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 1 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 1 # 同一实例的重试次数
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 10000 # 熔断超时时长：10000ms
