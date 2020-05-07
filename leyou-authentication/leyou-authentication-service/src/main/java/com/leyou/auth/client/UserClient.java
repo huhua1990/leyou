@@ -8,6 +8,6 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @Time: 2018-10-23 23:48
  * @Feature: 用户feignclient
  */
-@FeignClient(value = "user-service")
+@FeignClient(value = "user-service", fallback = Failback.class)
 public interface UserClient extends UserApi {
 }

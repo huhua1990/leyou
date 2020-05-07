@@ -22,6 +22,10 @@
         <module>leyou-secskill</module>
         <module>leyou-config</module>
         <module>leyou-comments</module>
+        <module>leyou-adminserver</module>
+        <module>leyou-turbine</module>
+        <module>leyou-hystrix-dashboard</module>
+        <module>leyou-zipkin</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -57,7 +61,7 @@
         <!--<spring.mongodb.version>2.1.0.RELEASE</spring.mongodb.version>-->
         <aliyun.sdk.version>3.3.1</aliyun.sdk.version>
         <aliyun.sms.sdk.version>1.0.0</aliyun.sms.sdk.version>
-        <spring.security.version>5.1.0.RELEASE</spring.security.version>
+        <spring.security.version>5.1.1.RELEASE</spring.security.version>
         <javax.servlet.version>3.1.0</javax.servlet.version>
         <jwt.version>0.9.1</jwt.version>
         <wxpay.version>0.0.3</wxpay.version>
@@ -236,6 +240,12 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.projectreactor</groupId>
+                <artifactId>reactor-core</artifactId>
+                <version>3.2.6.RELEASE</version>
             </dependency>
 
            <!-- <dependency>
