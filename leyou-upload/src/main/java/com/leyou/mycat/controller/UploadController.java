@@ -1,6 +1,6 @@
-package com.leyou.upload.controller;
+package com.leyou.mycat.controller;
 
-import com.leyou.upload.service.serviceimpl.UploadServiceImpl;
+import com.leyou.mycat.service.serviceImpl.UploadServiceImpl;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

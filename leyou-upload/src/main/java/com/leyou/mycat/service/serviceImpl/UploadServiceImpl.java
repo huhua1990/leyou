@@ -1,8 +1,8 @@
-package com.leyou.upload.service.serviceimpl;
+package com.leyou.mycat.service.serviceImpl;
 
 import com.github.tobato.fastdfs.domain.StorePath;
 import com.github.tobato.fastdfs.service.FastFileStorageClient;
-import com.leyou.upload.service.UploadService;
+import com.leyou.mycat.service.UploadService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

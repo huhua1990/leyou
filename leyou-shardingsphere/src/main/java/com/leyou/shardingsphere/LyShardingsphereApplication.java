@@ -1,0 +1,22 @@
+package com.leyou.shardingsphere;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.transaction.jta.JtaAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
+import tk.mybatis.spring.annotation.MapperScan;
+
+
+@ComponentScans({
+        @ComponentScan("com.leyou.shardingsphere.service.impl")
+})
+@SpringBootApplication(exclude = {JtaAutoConfiguration.class})
+@MapperScan(basePackages = "com.leyou.shardingsphere.mapper")
+public class LyShardingsphereApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(LyShardingsphereApplication.class, args);
+    }
+
+}
+
