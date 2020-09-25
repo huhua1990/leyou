@@ -6,7 +6,7 @@ import io.shardingsphere.api.algorithm.sharding.standard.PreciseShardingAlgorith
 import java.util.Collection;
 
 /**
- * @Description
+ * @Description 自定义表分片算法
  * @Auther: hh
  * @Date: 2020/9/18 19:36
  * @Version:1.0
@@ -24,7 +24,7 @@ public class UserDemoTablesPreciseShardingAlgorithm implements PreciseShardingAl
     public String doSharding(Collection<String> collection, PreciseShardingValue<String> preciseShardingValue) {
         // 分片字段值
         String value = preciseShardingValue.getValue();
-        // 现在算法是:%2 求余如果是0则user_demo0,如果是1则user_demo1。但是由于id是字符串而且是很长的，所以截取最后一位然后转为Integer类型再求余
+        // 求余如果是0则user_demo0,如果是1则user_demo1。但是由于id是字符串而且是很长的，所以截取最后一位然后转为Integer类型再求余
         value = value.substring(value.length()-1,value.length());
         Integer number = Integer.valueOf(value);
         int result = number;
@@ -36,9 +36,4 @@ public class UserDemoTablesPreciseShardingAlgorithm implements PreciseShardingAl
         throw new UnsupportedOperationException();
     }
 
-    public static void main(String[] args) {
-        System.out.println(234324235%2);
-        System.out.println(234324234%2);
-        System.out.println(234324231%2);
-    }
 }

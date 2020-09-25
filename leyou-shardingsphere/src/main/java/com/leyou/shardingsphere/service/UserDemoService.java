@@ -17,5 +17,5 @@ public interface UserDemoService {
 
     public ResponseJson deleteUserByPhone(Login login);
 
-    public ResponseJson findUserByPhone(String phone);
+    public ResponseJson findList(String id, String phone);
 }

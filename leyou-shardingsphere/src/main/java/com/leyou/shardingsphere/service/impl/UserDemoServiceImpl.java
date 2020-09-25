@@ -77,7 +77,7 @@ public class UserDemoServiceImpl implements UserDemoService {
         try{
             String phone = login.getPhone();
             String userName = login.getName();
-            List<UserDemo> userList = userMapper.findUserByPhone(phone);
+            List<UserDemo> userList = userMapper.findList(null,phone);
             for (UserDemo user : userList){
                 user.setUserName(userName);
                 // 需要注意：如果只是分表或者分库，记得是根据分片字段是更新数据，如果是分表分库是根据分表的分片字段去更新数据，不然会出现路由失败的情况，即更新数据失败
@@ -118,22 +118,11 @@ public class UserDemoServiceImpl implements UserDemoService {
     }
 
     @Override
-    @ShardingTransactionType(TransactionType.XA)
-    @Transactional
-    public ResponseJson findUserByPhone(String phone) {
+    public ResponseJson findList(String id, String phone) {
         ResponseJson responseJson = new ResponseJson();
-        try{
-            List<UserDemo> user = userMapper.findUserByPhone(phone);
-            //List<UserDemo> user1 = userMapper.findUserByPhoneOderByTime(phone);
-            responseJson.setData(user);
-        }catch (Exception e){
-            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
-            logger.error("查询用户信息报错：",e);
-            responseJson.setSuccess(false);
-            responseJson.setCode(500);
-            responseJson.setMsg("服务器报错");
-            return responseJson;
-        }
+        List<UserDemo> user = userMapper.findList(id, phone);
+        //List<UserDemo> user1 = userMapper.findUserByPhoneOderByTime(phone);
+        responseJson.setData(user);
         return responseJson;
     }
 }

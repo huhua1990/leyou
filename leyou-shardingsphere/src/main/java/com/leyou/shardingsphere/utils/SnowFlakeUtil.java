@@ -18,7 +18,6 @@ public class SnowFlakeUtil {
      * 例如机器的HostName为:dangdang-db-sharding-dev-01(公司名-部门名-服务名-环境名-编号)
      * ,会截取HostName最后的编号01作为workerId.
      *
-     * @author DonneyYoung
      **/
     public static void initWorkerIdByHostNameKeyGenerator(){
         InetAddress address;
@@ -77,8 +76,7 @@ public class SnowFlakeUtil {
      * ....为了保证相加生成出的workerId < 1024,思路是将每个bit位的后6位相加。这样在一定程度上也可以满足workerId不重复的问题。
      * </p>
      * 使用这种IP生成workerId的方法,必须保证IP段相加不能重复
-     *
-     * @author DogFc
+
      */
     public static void initWorkerIdByIPSectionKeyGenerator() {
         InetAddress address;

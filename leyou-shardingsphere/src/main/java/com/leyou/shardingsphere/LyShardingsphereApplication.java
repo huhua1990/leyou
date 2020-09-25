@@ -8,9 +8,6 @@ import org.springframework.context.annotation.ComponentScans;
 import tk.mybatis.spring.annotation.MapperScan;
 
 
-@ComponentScans({
-        @ComponentScan("com.leyou.shardingsphere.service.impl")
-})
 @SpringBootApplication(exclude = {JtaAutoConfiguration.class})
 @MapperScan(basePackages = "com.leyou.shardingsphere.mapper")
 public class LyShardingsphereApplication {

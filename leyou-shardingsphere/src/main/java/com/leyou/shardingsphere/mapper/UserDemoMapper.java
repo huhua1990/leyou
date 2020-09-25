@@ -2,6 +2,7 @@ package com.leyou.shardingsphere.mapper;
 
 import com.leyou.shardingsphere.entity.UserDemo;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Component;
 import tk.mybatis.mapper.common.BaseMapper;
 
 import java.util.List;
@@ -13,11 +14,15 @@ import java.util.List;
  * @Date: 2020/9/18 19:20
  * @Version:1.0
  */
-@Mapper
+@Component
 public interface UserDemoMapper extends BaseMapper<UserDemo> {
 
-    @Select("select * from user_demo where phone = #{phone}")
-    List<UserDemo> findUserByPhone(@Param("phone") String phone);
+    @Select({"<script>",
+            "select * from user_demo where 1=1 ",
+            "<if test='id !=null'> and id = #{id} </if>",
+            "<if test='phone !=null'> and phone = #{phone}</if>",
+            " </script>"})
+    List<UserDemo> findList(@Param("id") String id, @Param("phone") String phone);
 
     @Select("select * from user_demo where phone = #{phone} order by create_time")
     List<UserDemo> findUserByPhoneOderByTime(@Param("phone") String phone);

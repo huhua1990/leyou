@@ -73,11 +73,11 @@ public class UserDemoController {
         return responseJson;
     }
 
-    @GetMapping("/findUserByPhone")
-    public ResponseJson findUserByPhone(@RequestParam String phone){
+    @GetMapping("/findList")
+    public ResponseJson findUserByPhone(@RequestParam(required = false) String id, @RequestParam(required = false) String phone){
         ResponseJson responseJson = new ResponseJson();
         try {
-            responseJson = userService.findUserByPhone(phone);
+            responseJson = userService.findList(id, phone);
         }catch (Exception e){
             logger.error("查询用户：",e);
             responseJson.setSuccess(false);
@@ -88,7 +88,4 @@ public class UserDemoController {
         return responseJson;
     }
 
-    public static void main(String[] args) {
-        int sum = 0*0;
-    }
 }

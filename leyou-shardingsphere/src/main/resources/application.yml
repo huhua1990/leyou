@@ -2,7 +2,7 @@ spring:
   application:
     name: shardingsphere
   profiles:
-    active: sharding-databases
+    active: sharding-hint
   main:
     allow-bean-definition-overriding: true
 server:
